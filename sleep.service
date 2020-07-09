@@ -1,0 +1,6 @@
+[Unit]
+Description=demonstrate simple type
+
+[Service]
+Type=simple
+ExecStart=sleep 3600

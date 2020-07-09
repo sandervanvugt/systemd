@@ -1,0 +1,16 @@
+[Unit]
+Description=demonstrate simple type using heavy security options
+
+[Service]
+ProtectSystem=strict
+ProtectHome=1
+PrivateDevices=1
+ProtectKernelTunables=1
+ProtectKernelModules=1
+ProtectControlGroups=1
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+NoNewPrivileges=1
+PrivateTmp=1
+Type=simple
+ExecStart=sleep 3600

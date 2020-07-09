@@ -1,0 +1,9 @@
+[Unit]
+Description=Demonstrate some advanced security features
+
+[Service]
+DynamicUser=yes
+ProtectHome=yes
+StateDirectory=webserver
+WorkingDirectory=/srv/www/content
+ExecStart=python3 -m http.server 8000

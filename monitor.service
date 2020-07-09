@@ -1,0 +1,12 @@
+[Unit]
+Description=Send system information to the journal
+Wants=monitor.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/free
+ExecStart=/usr/bin/lsblk
+
+[Install]
+WantedBy=multi-user.target
+

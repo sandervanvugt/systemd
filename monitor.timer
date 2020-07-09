@@ -1,0 +1,10 @@
+[Unit]
+Description=Log info
+Requires=monitor.service
+
+[Timer]
+Unit=monitor.service
+OnCalendar=*-*-* *:*:30
+
+[Install]
+WantedBy=timers.target
