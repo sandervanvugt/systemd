@@ -1,0 +1,13 @@
+[Unit]
+Description=break process
+
+[Service]
+Type=oneshot
+DynamicUser=yes
+ExecStart=sleep 5
+# will create file in /var/lib/private
+StateDirectory=dynamic
+
+[Install]
+WantedBy=basic.target
+
