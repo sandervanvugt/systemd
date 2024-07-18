@@ -1,0 +1,322 @@
+    1  systemctl -t help
+    2  cd /usr/lib/systemd/system
+    3  ls
+    4  vim vmtoolsd.service 
+    5  systemctl cat vmtoolsd.service 
+    6  cd /etc/systemd/system/
+    7  ls
+    8  systemctl cat sshd.service
+    9  systemctl edit vmtoolsd.service 
+   10  systemctl cat vmtoolsd.service 
+   11  pwd
+   12  ls
+   13  export EDITOR=/usr/bin/vim
+   14  systemctl edit vmtoolsd.service 
+   15  echo export EDITOR=/usr/bin/vim >> ~/.bashrc
+   16  history
+   17  cd /run/systemd/system/
+   18  ls
+   19  cd ..
+   20  ls
+   21  pwd
+   22  cd generator/
+   23  ls
+   24  cat /etc/fstab
+   25  cat boot.mount 
+   26  cd /usr/local/lib/
+   27  ls
+   28  cd 
+   29  history
+   30  man -k systemd
+   31  man -k systemd | wc -l
+   32  man systemd.service
+   33  systemctl cat sshd.service
+   34  man 7 systemd.directives
+   35  man systemd.kill
+   36  systemctl show sshd.service
+   37  history
+   38  dnf install -y httpd
+   39  systemctl cat httpd
+   40  systemctl cat sshd.service
+   41  systemctl edit httpd
+   42  systemctl status httpd
+   43  systemctl start httpd.service
+   44  systemctl status httpd.service
+   45  kill -o 75893
+   46  kill -9 75893
+   47  systemctl status httpd
+   48  systemctl edit httpd.service
+   49  systemctl status httpd.service
+   50  kill -9 76983
+   51  kill -9 76083
+   52  systemctl status httpd.service
+   53  systemctl daemon-reload
+   54  systemctl cat sshd.service
+   55  man 7 systemd.directives
+   56  man systemd.service
+   57  systemctl list-unit-files -t target
+   58  systemctl list-units -t target
+   59  systemctl list-dependencies
+   60  systemctl get-default
+   61  reboot
+   62  systemctl list-units
+   63  systemctl isolate graphical.target
+   64  history
+   65  systemctl cat multi-user.target
+   66  cd /etc/systemd/system/
+   67  ls
+   68  cd multi-user.target.wants/
+   69  ls
+   70  ls -l
+   71  systemctl enable httpd.service
+   72  ls
+   73  systemctl cat httpd.service
+   74  cd
+   75  cd systemd/
+   76  ./countdown 1
+   77  history
+   78  systemctl status rsyslog.service 
+   79  journalctl
+   80  journalctl -x
+   81  journalctl -xu sshd
+   82  pwd
+   83  cd /etc/systemd/
+   84  ls
+   85  vim journald.conf 
+   86  cd /var/log
+   87  ls
+   88  mkdir journal
+   89  ls journal/
+   90  systemctl daemon-reload
+   91  ls journal/
+   92  systemctl restart systemd-journal-flush.service 
+   93  ls journal/
+   94  ip a
+   95  loginctl list-sessions 
+   96  loginctl list-users
+   97  loginctl list-seats
+   98  loginctl kill-session 4
+   99  who
+  100  w
+  101  who
+  102  w
+  103  loginctl list-users
+  104  loginctl list-sessions
+  105  loginctl list-seats
+  106  who
+  107  w --help
+  108  w -f
+  109  dnf install -y vsftpd
+  110  systemctl status vsftpd
+  111  systemctl edit httpd
+  112  systemctl stop httpd
+  113  ps aux | grep ftp
+  114  systemctl start httpd
+  115  ps aux | grep ftp
+  116  systemctl cat vsftpd
+  117  systemctl status vsftpd
+  118  systemctl status httpd
+  119  kill -9 3464
+  120  systemctl status httpd
+  121  systemctl status vsftpd
+  122  systemctl cat httpd
+  123  systemctl list-dependencies
+  124  cd
+  125  cd /etc/systemd/system/
+  126  ls
+  127  cp /usr/lib/systemd/system/sshd.service ./sleep.service
+  128  vim sleep.service 
+  129  systemctl daemon-reload
+  130  systemctl status sleep.service
+  131  systemctl enable --now sleep.service
+  132  systemctl status sleep.service
+  133  cd ~/systemd/
+  134  ./countdown 12
+  135  systemctl cat sleep.service 
+  136  systemd-run --help
+  137  systemd-run sleep infinity
+  138  systemctl cat run-r242580575f6a409cadc18b70318118e1.service 
+  139  cd /run/systemd/system/
+  140  ls
+  141  cd ..
+  142  man systemd.directives
+  143  man systemd.exec
+  144  pwd
+  145  cd /etc/systemd/system/
+  146  ls
+  147  vim sleep.service 
+  148  systemctl daemon-reload
+  149  systemctl stop sleep
+  150  systemctl start sleep.service 
+  151  ps aux | grep sleep
+  152  grep sleep /etc/passwd
+  153  id sleep
+  154  ls -l $(which passwd)
+  155  systemd-analyze security sleep.service 
+  156  systemctl analyze sshd.service
+  157  systemctl analyze security sshd.service
+  158  systemd-analyze sshd.service
+  159  systemd-analyze security sshd.service
+  160  systemd-analyze blame 
+  161  pwd
+  162  cp sleep.service druk.service
+  163  vim druk.service 
+  164  systemctl daemon-reload
+  165  systemctl start druk.service
+  166  top
+  167  systemd-analyze blame
+  168  poweroff
+  169  lsblk
+  170  fdisk /dev/nvme0n1
+  171  lsblk
+  172  mkfs.ext4 /dev/nvme0n1p4
+  173  cd /run/systemd/generator/
+  174  ls
+  175  ls vsftpd.target.wants/
+  176  cp boot.mount /etc/systemd/system/data.mount
+  177  mkdir /data
+  178  cd /etc/systemd/system/
+  179  vim data.mount 
+  180  mount | grep data
+  181  systemctl start data.mount
+  182  mount | grep data
+  183  systemctl enable data.mount
+  184  pwd
+  185  vim data.mount 
+  186  systemctl enable data.mount
+  187  reboot
+  188  systemctl status data.mount
+  189  systemctl status data.automount 
+  190  mount | grep data
+  191  cd /data
+  192  mount | grep data
+  193  ls
+  194  touch itworks
+  195  cd 
+  196  sleep 10
+  197  mount | grep data
+  198  cd /run/systemd/generator
+  199  vim boot.mount
+  200  blkid
+  201  cd /dev/disk/
+  202  ls
+  203  cd by-uuid/
+  204  ls
+  205  ls -l
+  206  cd /run/systemd/generator/
+  207  ls
+  208  cat boot-efi.mount 
+  209  cat -.mount
+  210  cat -- -.mount
+  211  ls
+  212  cp boot.mount /etc/systemd/system/
+  213  cp boot-efi.mount 
+  214  cp boot-efi.mount /etc/systemd/system/
+  215  cp -- -.mount /etc/systemd/system/
+  216  systemctl list-dependencies
+  217  cd /etc/systemd/system/
+  218  vim -- -.mount
+  219  systemctl enable -- -.mount
+  220  vim boot.mount 
+  221  vim boot-efi.mount 
+  222  systemctl enable boot-efi.mount
+  223  systemctl enable boot.mount
+  224  cd /etc/default/
+  225  vim grub 
+  226  grub2-mkconfig -o /boot/grub2/grub.cfg
+  227  vim /etc/fstab
+  228  reboot
+  229  lsblk
+  230  cat /etc/fstab
+  231  cd /run/systemd/generator/
+  232  ls
+  233  cp dev-mapper-cs\\x2dswap.swap /etc/systemd/system/
+  234  cd /etc/systemd/system/
+  235  vim dev-mapper-cs\\x2dswap.swap 
+  236  systemctl daemon-reload
+  237  systemctl enable dev-mapper-cs\\x2dswap.swap
+  238  systemct list-dependencies
+  239  systemctl list-dependencies
+  240  ls
+  241  vim dev-mapper-cs\\x2dswap.swap 
+  242  systemctl enable dev-mapper-cs\\x2dswap.swap
+  243  history
+  244  rm /etc/fstab
+  245  reboot
+  246  systemctl status sshd.service
+  247  date
+  248  ps aux | grep ssh
+  249  exit
+  250  ls -l /etc/fstab
+  251  cd systemd/
+  252  ./countdown 16
+  253  history
+  254  systemctl list-unit-files -t timer
+  255  systemctl list-unit-files fstrim*
+  256  systemctl cat fstrim.timer
+  257  systemctl enable --now fstrim.timer
+  258  cd 
+  259  cd systemd/
+  260  ks
+  261  ls
+  262  cp * /etc/systemd/system/
+  263  cd /etc/systemd/system/
+  264  systemctl daemon-reload
+  265  cat monitor.service 
+  266  vim monitor.timer 
+  267  systemctl enable --now monitor.timer
+  268  date
+  269  journalctl -S today -f -u monitor.service
+  270  man systemd.time
+  271  man systemd.timer
+  272  systemctl list-unit-files sshd*
+  273  systemctl disable --now sshd.service
+  274  systemctl cat sshd.socket
+  275  systemctl enable --now sshd.socket
+  276  ps aux | grep ssh
+  277  ssh student@localhost
+  278  ps aux | grep ssh
+  279  systemctl list-unit-files -t path
+  280  systemctl cat cups.path
+  281  ./countdown 1
+  282  pwd
+  283  ls
+  284  lscpu | less
+  285  echo 0 > /sys/bus/cpu/devices/cpu1/online 
+  286  lscpu | less
+  287  cat stress1.service 
+  288  cat stress2.service 
+  289  systemctl start stress1
+  290  systemctl start stress2
+  291  top
+  292  systemctl set-property system.slice CPUShares=4096
+  293  top
+  294  systemctl show httpd
+  295  systemctl edit httpd.service
+  296  systemctl status httpd.service
+  297  systemctl list-units -t slice
+  298  systemd-cgls
+  299  systemd-cgtop
+  300  systemctl start stress1.service
+  301  systemd-cgtop
+  302  systemctl stop stress1.service
+  303  echo 1 > /sys/bus/cpu/devices/cpu1/online 
+  304  lscpu
+  305  cd /root/systemd/
+  306  ./countdown 12
+  307  pwd
+  308  ls
+  309  cp sleep.service /tmp
+  310  chmod +r /tmp/sleep.service 
+  311  exit
+  312  systemctl enable-linger student
+  313  loginctl enable-linger student
+  314  loginctl show-user student
+  315  exit
+  316  ps faux | less
+  317  history
+  318  udevadm info --query=all --name=/dev/nvme0n1
+  319  cd /usr/lib/udev/rules.d/
+  320  ls
+  321  cd
+  322  history > 18-jul-2024.txt
