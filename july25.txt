@@ -1,0 +1,371 @@
+      171  ip a
+  172  man systemd.directives
+  173  exit
+  174  ps aux | less
+  175  systemctl list-dependencies 
+  176  systemctl list-units | less
+  177  systemctl list-units -t path
+  178  dnf install -y bash-scripting
+  179  dnf install -y git
+  180  git clone https://github.com/sandervanvugt/bash-scripting
+  181  cd bash-scripting/
+  182  ls
+  183  vim network 
+  184  cd ..
+  185  cd /usr/lib/systemd/system
+  186  ls
+  187  vim NetworkManager.service 
+  188  ls 
+  189  vim tuned.service 
+  190  systemctl -t help
+  191  cd
+  192  cd /etc
+  193  ls -l /usr/lib/modprobe.d/
+  194  ls -l /etc/modprobe.d/
+  195  ls /usr/lib/systemd/system
+  196  ls systemd/system/
+  197  dnf install -y httpd
+  198  cd /run/systemd/system/
+  199  ls
+  200  cd ..
+  201  ls
+  202  cd
+  203  systemctl cat NetworkManager.service 
+  204  man systemd.directives
+  205  man systemd.unit
+  206  systemctl show httpd.service
+  207  man systemd.directives
+  208  man systemd.service
+  209  man -k systemd
+  210  man -k systemd | wc -l
+  211  man systemd.pcrlocal
+  212  man systemd.pcrlock
+  213  systemctl edit httpd.service
+  214  vim /etc/bashrc
+  215  source /etc/bashrc
+  216  systemctl edit httpd.service
+  217  systemctl cat sshd.service
+  218  systemctl edit httpd.service
+  219  systemctl cat httpd.service
+  220  systemctl status httpd
+  221  kill -9 1116
+  222  systemctl status httpd
+  223  dnf install -y vsftpd
+  224  systemctl status vsftpd
+  225  systemctl enable vsftpd
+  226  systemctl status vsftpd
+  227  systemctl start vsftpd
+  228  systemctl status vsftpd
+  229  systemctl edit httpd.service
+  230  vim /etc/systemd/system/httpd.service.d/override.conf 
+  231  cat /etc/systemd/system/httpd.service.d/override.conf 
+  232  mkdir /etc/systemd/system/vsftpd.service.d
+  233  vim /etc/systemd/system/vsftpd.service.d/sander.conf
+  234  systemctl cat vsftpd.service 
+  235  mv /etc/systemd/system/vsftpd.service.d/sander.conf /etc/systemd/system/vsftpd.service.d/override.conf
+  236  systemctl cat vsftpd.service 
+  237  systemctl daemon-reload
+  238  systemctl cat vsftpd.service 
+  239  history
+  240  systemctl show httpd
+  241  exit
+  242  cd bash-scripting/
+  243  ./countdown 12
+  244  history
+  245  git clone https://github.com/sandervanvugt/systemd
+  246  cd systemd/
+  247  ls
+  248  cd ..
+  249  systemctl list-units -t target
+  250  systemctl cat sounds.target
+  251  systemctl cat sound.target
+  252  systemctl cat graphical.target
+  253  systemctl cat multi-user.target
+  254  man systemd.directives
+  255  man systemd.uit
+  256  man systemd.unit
+  257  systemctl cat multi-user.target
+  258  cd /etc/systemd/system/
+  259  ls
+  260  cd multi-user.target.wants/
+  261  ls
+  262  ls -l
+  263  systemctl cat vsftpd.service
+  264  systemctl disable vsftpd.service
+  265  systemctl enable vsftpd.service
+  266  cd /usr/lib/systemd/system
+  267  ls *target
+  268  ls multi*target
+  269  cp graphical.target /etc/systemd/system/sander.target
+  270  systemctl daemon-reload
+  271  cd /etc/systemd/system/
+  272  ls
+  273  mkdir sander.target.wants
+  274  ls graphical.target.wants/
+  275  vim sander.target
+  276  cp /usr/lib/systemd/system/fstrim.service sander.service
+  277  vim sander.service
+  278  systemctl daemon-reload
+  279  cat sander.service 
+  280  systemctl enable sander.service
+  281  systemctl set-default sander.target
+  282  systemctl reboot.target
+  283  systemctl start reboot.target
+  284  systemctl get-default
+  285  systemctl list-dependencies
+  286  vim /etc/default/grub 
+  287  grub2-mkconfig -o /boot/grub2/grub.cfg
+  288  history
+  289  dmesg
+  290  journalctl --dmesg
+  291  journalctl
+  292  vim /etc/rsyslog.conf 
+  293  ls -l /var/log
+  294  journalctl
+  295  journalctl -u httpd
+  296  systemctl status httpd
+  297  journalctl -xu httpd
+  298  journalctl -xb
+  299  mkdir /var/log/journal
+  300  ls -l /var/log/journal/
+  301  systemctl daemon-reload 
+  302  ls -l /var/log/journal/
+  303  systemctl --list-unit-files
+  304  systemctl list-unit-files
+  305  systemctl start systemd-journal-flush
+  306  ls -l /var/log/journal/
+  307  systemctl restart systemd-journal-flush
+  308  ls -l /var/log/journal/
+  309  history
+  310  cat /etc/passwd
+  311  passwd linda
+  312  loginctl list-users
+  313  loginctl list-sessions
+  314  loginctl kill-user linda
+  315  loginctl list-sessions
+  316  loginctl list-users
+  317  loginctl kill-session 6
+  318  loginctl list-sessions
+  319  loginctl
+  320  vim /etc/resolv.conf 
+  321  systemctl -t help
+  322  history
+  323  systemctl disable --now httpd
+  324  systemctl disable --now vsftpd
+  325  systemctl edit vsftpd
+  326  ps aux | grep ftp
+  327  systemctl enable --now httpd
+  328  ps aux | grep ftp
+  329  systemctl edit vsftpd
+  330  systemctl edit httpd
+  331  systemctl restart httpd
+  332  ps aux | grep ftp
+  333  systemctl daemon-reload
+  334  systemctl stop httpd
+  335  systemctl start httpd
+  336  systemctl status httpd
+  337  systemctl status vsftpd
+  338  systemctl edit httpd
+  339  systemctl restart httpd
+  340  ps aux | grep ftp
+  341  systemctl edit httpd
+  342  history
+  343  vim /etc/systemd/system/sander.service 
+  344  systemctl cat NetworkManager.service
+  345  systemctl status sander.service
+  346  ps aux | grep 935
+  347  vim /etc/systemd/system/sander.service 
+  348  systemctl daemon-reload
+  349  systemctl restart sander.service
+  350  ps aux | grep infinit
+  351  id sander
+  352  grep sander /etc/passwd
+  353  cd systemd/
+  354  ls
+  355  cat dynamicuser.service 
+  356  systemctl show sander.service
+  357  systemctl show sander.service | less
+  358  systemctl show --all sander.service | less
+  359  man systemd.directives
+  360  man systemd.exec
+  361  vim /etc/systemd/system/sander.service 
+  362  systemctl daemon-reload
+  363  systemctl restart sander.service
+  364  lsns
+  365  lsns | grep sander
+  366  lsns | grep -C 3 sander
+  367  cd
+  368  systemd-analyze security
+  369  systemd-analyze security irqbalance.service 
+  370  systemd-analyze security
+  371  systemd-analyze security atd.service
+  372  systemd-analyze security
+  373  systemd-analyze calendar 
+  374  systemd-analyze calendar -h
+  375  systemd-analyze blame 
+  376  lsblk
+  377  systemctl cat irqbalance.service 
+  378  poweroff
+  379  cd systemd/
+  380  ./countdown 12
+  381  ./countdown 1
+  382  fdisk /dev/nvme0n1
+  383  mkfs.xfs /dev/nvme0n1p4
+  384  cd /etc/systemd/system/
+  385  ls /run/systemd/generator/
+  386  cp /run/systemd/generator/boot.mount ./data.mount
+  387  vim data.mount 
+  388  systemctl daemon-reload
+  389  systemctl enable --now data.mount
+  390  reboot
+  391  mount | grep data
+  392  systemctl status data.mount
+  393  grep data /etc/fstab
+  394  blkid
+  395  vim data.mount 
+  396  cd /etc/systemd/system/
+  397  vim data.mount 
+  398  ls -l /dev/disk/by-uuid/
+  399  systemctl daemon-reload
+  400  history
+  401  cd
+  402  cd systemd/
+  403  history
+  404  vim /etc/fstab
+  405  cd /run/systemd/generator/
+  406  ls
+  407  cat boot-efi.mount 
+  408  cp boot-efi.mount /etc/systemd/system/
+  409  cp boot.mount /etc/systemd/system/
+  410  ls
+  411  cp -.mount /estc/systemd/system/
+  412  cp -- -.mount /estc/systemd/system/
+  413  cp -- -.mount /etc/systemd/system/
+  414  cp 'dev-disk-by\x2duuid-cada96c1\x2dda32\x2d4701\x2d85fb\x2d8f65c81eacd7.swap' /etc/systemd/system/
+  415  cd /etc/systemd/system/
+  416  ls
+  417  vim -- -.mount
+  418  cat sander.service 
+  419  vim -- -.mount
+  420  vim boot-efi.mount 
+  421  vim boot.mount 
+  422  systemctl enable -- -.mount
+  423  systemctl enable boot.mount
+  424  systemctl enable boot-efi.mount
+  425  ls *swap
+  426  vim dev-disk-by\\x2duuid-cada96c1\\x2dda32\\x2d4701\\x2d85fb\\x2d8f65c81eacd7.swap 
+  427  systemctl enable 'dev-disk-by\x2duuid-cada96c1\x2dda32\x2d4701\x2d85fb\x2d8f65c81eacd7.swap'
+  428  systemctl daemon-reload
+  429  mv /etc/fstab /etc/.fstab
+  430  cd
+  431  vim /etc/default/grub 
+  432  reboot
+  433  cd systemd/
+  434  ./countdown 18
+  435  vim /etc/default/grub 
+  436  grub2-mkconfig -o /boot/grub2/grub.cfg
+  437  df -h
+  438  cat /etc/.fstab
+  439  cat /etc/fstab
+  440  reboot
+  441  history
+  442  cd systemd/
+  443  ls
+  444  cat nfsdata.mount 
+  445  vim nfsdata.automount 
+  446  vim nfsdata.mount 
+  447  dnf install -y nfs-utils
+  448  vim /etc/exports
+  449  systemctl restart nfs-server
+  450  systemctl enable nfs-server
+  451  cp nfsdata* /etc/systemd/system/
+  452  systemctl daemon-reload
+  453  ls -ld /nfsdata
+  454  systemctl enable nfsdata.automount 
+  455  ls -ld /nfsdata
+  456  cd /nfsdata
+  457  mkdir /nfsdata
+  458  systemctl status nfsdata.automount 
+  459  rmdir /nfsdata
+  460  systemctl start nfsdata.automount
+  461  cd /nfsdata/
+  462  ls
+  463  systemctl status nfsdata.automount
+  464  systemctl status nfsdata.mount
+  465  cd /etc
+  466  ls cron*.*
+  467  systemctl status crond
+  468  systemctl list-unit-files -t timer
+  469  systemctl status logrotate.timer
+  470  systemctl cat logrotate.timer
+  471  man systemd.time
+  472  man systemd.timer
+  473  cd
+  474  systemctl list-unit-files -t timer | grep syss
+  475  dnf install -y sysstat
+  476  systemctl list-unit-files -t timer | grep syss
+  477  systemctl cat sysstat-collect.timer 
+  478  sar -A
+  479  systemctl list-unit-files -t socket
+  480  systemctl cat sshd.socket
+  481  systemctl list-units ssh*
+  482  systemctl disable --now sshd.service
+  483  systemctl enable --now sshd.socket
+  484  systemctl list-units ssh*
+  485  systemctl list-unit-files ssh*
+  486  ps aux | grep ssh
+  487  systemctl status sshd.service
+  488  ssh student@localhost
+  489  ps aux | grep ssh
+  490  systemctl cat cups.path
+  491  history
+  492  lscpu
+  493  echo 0 > /sys/bus/cpu/devices/cpu1/online 
+  494  lscpu
+  495  cd systemd/
+  496  ls
+  497  cp stress?.service 
+  498  systemctl cat stress1.service 
+  499  systemctl cat stress2.service 
+  500  systemctl start stress1
+  501  systemctl start stress2
+  502  top
+  503  echo 1 > /sys/bus/cpu/devices/cpu1/online 
+  504  top
+  505  killall dd
+  506  systemctl show httpd.service
+  507  man systemd.directives
+  508  man systemd.resource-control
+  509  vim /etc/systemd/system/stress1.service 
+  510  systemctl daemon-reload
+  511  systemctl start stress1
+  512  systemctl start stress2
+  513  top
+  514  man systemd.resource-control
+  515  killall dd
+  516  vim /etc/systemd/system/stress1.service 
+  517  echo 0 > /sys/bus/cpu/devices/cpu1/online 
+  518  systemctl start stress1.service 
+  519  systemctl start stress2.service 
+  520  top
+  521  cgtop
+  522  systemd-cgtop
+  523  man systemd.resource-control
+  524  systemctl edit httpd.service
+  525  systemctl restart httpd
+  526  systemctl status httpd
+  527  journalctl -u httpd
+  528  systemctl edit httpd
+  529  systemctl status httpd
+  530  man systemd.resource-control
+  531  systemctl cat system.slice
+  532  systemctl set-property system.slice CPUShares=4096
+  533  top
+  534  killall dd
+  535  kill 175667
+  536  kill 17667
+  537  kill 17566
+  538  top
+  539  systemd-cgls
+  540  cd
+  541  history > /tmp/july25.txt
